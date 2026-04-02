@@ -35,7 +35,11 @@ Predicting healthcare premiums is challenging due to:
 
 ### 🔹 Step 1: Baseline Model (Full Dataset)
 
-A model was trained on the **entire dataset** using XGBoost.
+| Model | RMSE | R² |
+|------|------|------|
+| Linear Regression | 2272 | 0.93 |
+| XGBoost | 1250 | 0.98 |
+| XGBoost (Tuned) | 1162 | 0.98 |
 
 **Result:**
 
@@ -65,7 +69,20 @@ Residual analysis revealed:
 Dataset split into:
 
 * **Young population (≤25)**
+
+| Model | R²  |
+|------|----------------------|
+| Linear Regression | 0.60 |
+| XGBoost | 0.56 |
+| XGBoost (Tuned) | 0.60 |
+
 * **Older population (>25)**
+
+| Model | R² |
+|------|------|
+| Linear Regression | 0.95 |
+| XGBoost | 0.99 |
+| XGBoost (Tuned) | 0.99 |
 
 **Observation:**
 
@@ -85,6 +102,12 @@ Introduced a new feature: **Genetic Risk**
 **Impact:**
 
 * Young population error reduced from **73% → ~2%**
+
+| Model | R² (After Genetic Risk) |
+|------|------|
+| Linear Regression | 0.99 |
+| XGBoost |  0.99 |
+| XGBoost (Tuned) | 0.99 |
 * Older group showed minimal change (already stable)
 
 ### 💡 Core Insight:
@@ -113,6 +136,16 @@ This project demonstrates that:
 * Matplotlib, Seaborn
 * Streamlit
 
+---
+## 📂 Technical Deep Dive
+
+While this README summarizes the key insights and outcomes, the complete implementation is available in the **`notebook/` folder**, including:
+
+- Data preprocessing & cleaning  
+- Model experimentation and comparison  
+- Residual/error analysis  
+- Segmentation strategy  
+- Feature engineering (Genetic Risk)  
 ---
 
 ## 🔮 Future Improvements
