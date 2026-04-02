@@ -70,7 +70,7 @@ Dataset split into:
 **Observation:**
 
 * Older group → stable predictions
-* Young group → extremely high error (~73%)
+* Young group → extremely high error (~73% of the predictions)
 
 ### 🚨 Insight:
 
